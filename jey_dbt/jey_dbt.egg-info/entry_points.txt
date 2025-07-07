@@ -1,0 +1,2 @@
+[console_scripts]
+jey-dbt = jey_dbt.main:cli
