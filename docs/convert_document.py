@@ -7,6 +7,7 @@ This script converts the markdown document to:
 - Plain text (.txt)
 - HTML (.html)
 - Styled HTML with CSS
+- Microsoft Word (.docx) - requires python-docx library
 """
 
 import re
@@ -291,10 +292,27 @@ def main():
     print(f"  - {html_file.name}")
     print(f"  - {md_copy.name}")
     print("=" * 80)
+    print("\nGenerating Microsoft Word document...")
+
+    # Try to generate Word document if python-docx is available
+    try:
+        import subprocess
+        word_script = output_dir / 'convert_to_word.py'
+        if word_script.exists():
+            subprocess.run(['python3', str(word_script)], check=True)
+            print("\n✓ Word document (.docx) also generated!")
+        else:
+            print("\nNote: Run convert_to_word.py separately to generate .docx format")
+    except Exception as e:
+        print(f"\nNote: Word document not generated. Run convert_to_word.py separately.")
+        print(f"  Error: {e}")
+
+    print("\n" + "=" * 80)
     print("\nYou can now:")
     print("  1. Open the HTML file in a browser and save as PDF")
-    print("  2. Import any format into Word/Google Docs")
-    print("  3. Share the files directly with stakeholders")
+    print("  2. Open the .docx file directly in Microsoft Word")
+    print("  3. Import any format into Word/Google Docs")
+    print("  4. Share the files directly with stakeholders")
 
 
 if __name__ == '__main__':

@@ -19,6 +19,11 @@ This directory contains the Enterprise Big Data Platform Governance and Standard
 - **Best for**: Web browsers, styled viewing, sharing via email
 - **How to use**: Open in any web browser, can be saved as PDF from browser
 
+### 📘 Microsoft Word Format
+- **File**: `Enterprise_BigData_Platform_Governance_Standards.docx`
+- **Best for**: Professional editing, direct use in Microsoft Word
+- **How to use**: Open directly in Microsoft Word or compatible applications (Google Docs, LibreOffice)
+
 ## How to Download
 
 ### Option 1: Download Individual Files
