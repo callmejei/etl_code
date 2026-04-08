@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Big Data Platform Governance and Standards</title>
+    
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                line-height: 1.6;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                color: #333;
+                background-color: #f5f5f5;
+            }
+            .container {
+                background-color: white;
+                padding: 40px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                border-radius: 5px;
+            }
+            h1 {
+                color: #2c3e50;
+                border-bottom: 3px solid #3498db;
+                padding-bottom: 10px;
+                margin-top: 30px;
+            }
+            h2 {
+                color: #34495e;
+                border-bottom: 2px solid #95a5a6;
+                padding-bottom: 8px;
+                margin-top: 25px;
+            }
+            h3 {
+                color: #34495e;
+                margin-top: 20px;
+            }
+            h4 {
+                color: #555;
+                margin-top: 15px;
+            }
+            code {
+                background-color: #f4f4f4;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 0.9em;
+                color: #d63384;
+            }
+            pre {
+                background-color: #2d2d2d;
+                color: #f8f8f2;
+                padding: 15px;
+                border-radius: 5px;
+                overflow-x: auto;
+                border-left: 4px solid #3498db;
+            }
+            pre code {
+                background-color: transparent;
+                color: #f8f8f2;
+                padding: 0;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 20px 0;
+            }
+            table th, table td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+            }
+            table th {
+                background-color: #3498db;
+                color: white;
+                font-weight: bold;
+            }
+            table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            ul, ol {
+                margin: 10px 0;
+                padding-left: 30px;
+            }
+            li {
+                margin: 5px 0;
+            }
+            hr {
+                border: none;
+                border-top: 2px solid #e0e0e0;
+                margin: 30px 0;
+            }
+            a {
+                color: #3498db;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .doc-info {
+                background-color: #e8f4f8;
+                padding: 15px;
+                border-left: 4px solid #3498db;
+                margin-bottom: 20px;
+            }
+            @media print {
+                body {
+                    background-color: white;
+                }
+                .container {
+                    box-shadow: none;
+                }
+            }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <h1>Enterprise Big Data Platform Governance and Standards</h1>
+
+<h2>Document Information</h2>
+<ul>
+<li><strong>Version</strong>: 1.0</li>
+<li><strong>Last Updated</strong>: April 2026</li>
+<li><strong>Document Owner</strong>: Enterprise Data Office</li>
+<li><strong>Classification</strong>: Internal</li>
+</ul>
+
+<hr>
+
+<h2>Table of Contents</h2>
+
+<p>1. <a href="#executive-summary">Executive Summary</a>
+2. <a href="#governance-framework">Governance Framework</a>
+3. <a href="#data-management-standards">Data Management Standards</a>
+4. <a href="#security-and-compliance">Security and Compliance</a>
+5. <a href="#architecture-standards">Architecture Standards</a>
+6. <a href="#data-quality-standards">Data Quality Standards</a>
+7. <a href="#operational-standards">Operational Standards</a>
+8. <a href="#roles-and-responsibilities">Roles and Responsibilities</a>
+9. <a href="#monitoring-and-reporting">Monitoring and Reporting</a>
+10. <a href="#appendices">Appendices</a></p>
+
+<hr>
+
+<h2>1. Executive Summary</h2>
+
+<h3>1.1 Purpose</h3>
+This document establishes the governance framework and technical standards for the Enterprise Big Data Platform. It provides comprehensive guidelines for data management, security, architecture, quality, and operations to ensure consistent, secure, and efficient use of big data technologies across the organization.
+
+<h3>1.2 Scope</h3>
+This governance framework applies to:
+<ul>
+<li>All big data processing and analytics workloads</li>
+<li>Data lakes and data warehouses</li>
+<li>ETL/ELT pipelines and data integration processes</li>
+<li>Streaming and batch data processing</li>
+<li>Machine learning and AI workloads</li>
+<li>Data visualization and reporting platforms</li>
+</ul>
+
+<h3>1.3 Key Objectives</h3>
+<ul>
+<li>Ensure data quality, consistency, and reliability</li>
+<li>Maintain security and regulatory compliance</li>
+<li>Optimize platform performance and cost</li>
+<li>Enable self-service analytics while maintaining governance</li>
+<li>Establish clear accountability and ownership</li>
+<li>Promote reusability and standardization</li>
+</ul>
+
+<hr>
+
+<h2>2. Governance Framework</h2>
+
+<h3>2.1 Governance Model</h3>
+
+<h4>2.1.1 Data Governance Council</h4>
+<ul>
+<li><strong>Purpose</strong>: Strategic oversight and decision-making authority</li>
+<li><strong>Composition</strong>: C-level executives, business unit leaders, Chief Data Officer</li>
+<li><strong>Responsibilities</strong>:</li>
+<li>Approve governance policies and standards</li>
+<li>Resolve cross-functional data conflicts</li>
+<li>Allocate budget and resources</li>
+<li>Review and approve major platform changes</li>
+</ul>
+
+<h4>2.1.2 Data Governance Office</h4>
+<ul>
+<li><strong>Purpose</strong>: Operational management and policy enforcement</li>
+<li><strong>Responsibilities</strong>:</li>
+<li>Develop and maintain governance standards</li>
+<li>Monitor compliance and enforce policies</li>
+<li>Coordinate governance activities across teams</li>
+<li>Provide guidance and training</li>
+<li>Manage metadata and data catalog</li>
+</ul>
+
+<h4>2.1.3 Domain Data Stewards</h4>
+<ul>
+<li><strong>Purpose</strong>: Subject matter expertise and domain-specific governance</li>
+<li><strong>Responsibilities</strong>:</li>
+<li>Define business glossary and metadata</li>
+<li>Ensure data quality within domain</li>
+<li>Approve access requests for domain data</li>
+<li>Collaborate on data model design</li>
+</ul>
+
+<h3>2.2 Governance Principles</h3>
+
+<p>1. <strong>Data is a Strategic Asset</strong>: Treat data as a valuable organizational resource
+2. <strong>Accountability</strong>: Clear ownership and responsibility for all data assets
+3. <strong>Transparency</strong>: Documented processes, lineage, and decision-making
+4. <strong>Quality by Design</strong>: Build quality controls into all data processes
+5. <strong>Security First</strong>: Implement security and privacy from the ground up
+6. <strong>Compliance</strong>: Adhere to all regulatory and legal requirements
+7. <strong>Standardization</strong>: Use consistent patterns, tools, and processes
+8. <strong>Collaboration</strong>: Foster cross-functional cooperation and knowledge sharing</p>
+
+<h3>2.3 Policy Framework</h3>
+
+<h4>2.3.1 Data Policies</h4>
+<ul>
+<li>Data Classification Policy</li>
+<li>Data Retention and Archival Policy</li>
+<li>Data Access and Authorization Policy</li>
+<li>Data Quality Policy</li>
+<li>Data Privacy Policy</li>
+<li>Data Sharing Policy</li>
+</ul>
+
+<h4>2.3.2 Technical Policies</h4>
+<ul>
+<li>Platform Architecture Policy</li>
+<li>Development Standards Policy</li>
+<li>Deployment and Release Policy</li>
+<li>Disaster Recovery and Business Continuity Policy</li>
+<li>Performance and Optimization Policy</li>
+</ul>
+
+<hr>
+
+<h2>3. Data Management Standards</h2>
+
+<h3>3.1 Data Classification</h3>
+
+<h4>3.1.1 Classification Levels</h4>
+<ul>
+<li><strong>Public</strong>: Non-sensitive information, approved for public disclosure</li>
+<li><strong>Internal</strong>: General business information, internal use only</li>
+<li><strong>Confidential</strong>: Sensitive business information, restricted access</li>
+<li><strong>Highly Confidential</strong>: Critical business information, strictly controlled access</li>
+<li><strong>Regulated</strong>: Data subject to regulatory requirements (PII, PHI, PCI, etc.)</li>
+</ul>
+
+<h4>3.1.2 Classification Requirements</h4>
+<ul>
+<li>All datasets must be classified upon creation</li>
+<li>Classification metadata must be maintained in the data catalog</li>
+<li>Access controls must align with classification level</li>
+<li>Regular review and reclassification as needed</li>
+</ul>
+
+<h3>3.2 Data Organization</h3>
+
+<h4>3.2.1 Data Lake Zones</h4>
+<pre><code class="language-">/raw/           - Ingested data in original format (immutable)
+/staging/       - Intermediate processing and validation
+/curated/       - Cleaned, validated, and conformed data
+/analytics/     - Business-ready datasets and aggregations
+/sandbox/       - Experimental and development work
+/archive/       - Historical data for long-term retention
+</code></pre>
+
+<h4>3.2.2 Naming Conventions</h4>
+
+<strong>Datasets</strong>:
+<pre><code class="language-">{domain}<em>{entity}</em>{granularity}<em>{version}
+Examples:
+<ul>
+<li>sales</em>transactions<em>daily</em>v1</li>
+<li>customer<em>profile</em>current<em>v2</li>
+<li>inventory</em>snapshot<em>hourly</em>v1</li>
+</ul>
+</code></pre>
+
+<strong>Tables/Files</strong>:
+<pre><code class="language-">{source<em>system}</em>{object<em>type}</em>{date<em>partition}
+Examples:
+<ul>
+<li>crm</em>contacts<em>20260408</li>
+<li>erp</em>orders<em>20260408</li>
+<li>web</em>events<em>20260408</li>
+</ul>
+</code></pre>
+
+<strong>Columns</strong>:
+<pre><code class="language-">- Use lowercase with underscores (snake</em>case)
+<ul>
+<li>Prefix with type indicators: is<em>, has</em>, num<em>, dt</em>, amt<em></li>
+</ul>
+Examples:
+<ul>
+<li>customer</em>id, is<em>active, dt</em>created, amt<em>total</li>
+</ul>
+</code></pre>
+
+<h3>3.3 Metadata Management</h3>
+
+<h4>3.3.1 Technical Metadata</h4>
+<ul>
+<li>Schema definitions and data types</li>
+<li>Source system information</li>
+<li>Data lineage and transformation logic</li>
+<li>Partition and indexing strategies</li>
+<li>Performance statistics</li>
+</ul>
+
+<h4>3.3.2 Business Metadata</h4>
+<ul>
+<li>Business glossary terms</li>
+<li>Data ownership and stewardship</li>
+<li>Data quality rules and SLAs</li>
+<li>Usage guidelines and restrictions</li>
+<li>Business context and descriptions</li>
+</ul>
+
+<h4>3.3.3 Operational Metadata</h4>
+<ul>
+<li>Data refresh schedules</li>
+<li>Pipeline execution history</li>
+<li>Data quality metrics</li>
+<li>Access logs and audit trails</li>
+<li>Performance metrics</li>
+</ul>
+
+<h3>3.4 Data Lineage</h3>
+
+<h4>3.4.1 Lineage Requirements</h4>
+<ul>
+<li>End-to-end traceability from source to consumption</li>
+<li>Automated lineage capture where possible</li>
+<li>Documentation of transformation logic</li>
+<li>Impact analysis capabilities</li>
+<li>Version control for lineage metadata</li>
+</ul>
+
+<h4>3.4.2 Lineage Tools</h4>
+<ul>
+<li>DBT for transformation lineage</li>
+<li>Apache Atlas or similar for enterprise lineage</li>
+<li>Git for code and configuration versioning</li>
+<li>Data catalog for lineage visualization</li>
+</ul>
+
+<h3>3.5 Master Data Management</h3>
+
+<h4>3.5.1 Master Data Domains</h4>
+<ul>
+<li>Customer</li>
+<li>Product</li>
+<li>Supplier/Vendor</li>
+<li>Employee</li>
+<li>Location</li>
+<li>Account/Chart of Accounts</li>
+</ul>
+
+<h4>3.5.2 MDM Principles</h4>
+<ul>
+<li>Single source of truth for each domain</li>
+<li>Golden record creation and maintenance</li>
+<li>Data quality validation at source</li>
+<li>Hierarchies and relationships management</li>
+<li>Change data capture and versioning</li>
+</ul>
+
+<hr>
+
+<h2>4. Security and Compliance</h2>
+
+<h3>4.1 Access Control</h3>
+
+<h4>4.1.1 Authentication</h4>
+<ul>
+<li>Single Sign-On (SSO) for all platform access</li>
+<li>Multi-factor authentication (MFA) for privileged access</li>
+<li>Service accounts with unique identifiers</li>
+<li>Regular credential rotation</li>
+<li>Session timeout policies</li>
+</ul>
+
+<h4>4.1.2 Authorization</h4>
+<ul>
+<li>Role-Based Access Control (RBAC)</li>
+<li>Principle of least privilege</li>
+<li>Separation of duties for critical operations</li>
+<li>Just-in-time access for elevated privileges</li>
+<li>Regular access reviews and recertification</li>
+</ul>
+
+<h4>4.1.3 Access Levels</h4>
+<pre><code class="language-">- Reader: View data and metadata only
+<ul>
+<li>Analyst: Read + execute approved queries</li>
+<li>Developer: Read + create/modify development objects</li>
+<li>Data Owner: Full control within assigned domain</li>
+<li>Administrator: Platform administration (limited users)</li>
+</ul>
+</code></pre>
+
+<h3>4.2 Data Security</h3>
+
+<h4>4.2.1 Encryption</h4>
+<ul>
+<li><strong>At Rest</strong>: AES-256 encryption for all stored data</li>
+<li><strong>In Transit</strong>: TLS 1.2+ for all data transfers</li>
+<li><strong>Key Management</strong>: Centralized key management service</li>
+<li><strong>Encryption Scope</strong>: Based on data classification level</li>
+</ul>
+
+<h4>4.2.2 Data Masking and Anonymization</h4>
+<ul>
+<li>Dynamic data masking for sensitive fields</li>
+<li>Tokenization for PII elements</li>
+<li>Anonymization for non-production environments</li>
+<li>Pseudonymization for analytics use cases</li>
+</ul>
+
+<h4>4.2.3 Network Security</h4>
+<ul>
+<li>Virtual Private Cloud (VPC) isolation</li>
+<li>Network segmentation and firewall rules</li>
+<li>Private endpoints for data services</li>
+<li>IP whitelisting for external access</li>
+<li>DDoS protection and WAF</li>
+</ul>
+
+<h3>4.3 Compliance and Regulatory</h3>
+
+<h4>4.3.1 Regulatory Requirements</h4>
+<ul>
+<li><strong>GDPR</strong>: Data privacy and right to be forgotten</li>
+<li><strong>CCPA</strong>: California Consumer Privacy Act compliance</li>
+<li><strong>HIPAA</strong>: Healthcare data protection (if applicable)</li>
+<li><strong>SOX</strong>: Financial data controls</li>
+<li><strong>Industry-Specific</strong>: Sector regulations as applicable</li>
+</ul>
+
+<h4>4.3.2 Compliance Controls</h4>
+<ul>
+<li>Data residency and sovereignty requirements</li>
+<li>Consent management and tracking</li>
+<li>Privacy impact assessments</li>
+<li>Data retention and deletion procedures</li>
+<li>Audit logging and monitoring</li>
+<li>Breach notification procedures</li>
+</ul>
+
+<h4>4.3.3 Privacy by Design</h4>
+<ul>
+<li>Privacy considerations in architecture</li>
+<li>Minimal data collection principle</li>
+<li>Purpose limitation and use restrictions</li>
+<li>Data minimization in analytics</li>
+<li>Privacy-preserving techniques (differential privacy, federated learning)</li>
+</ul>
+
+<h3>4.4 Audit and Logging</h3>
+
+<h4>4.4.1 Audit Requirements</h4>
+<ul>
+<li>All data access must be logged</li>
+<li>Administrative actions must be audited</li>
+<li>Security events must be monitored</li>
+<li>Logs must be immutable and tamper-proof</li>
+<li>Minimum 1-year retention for audit logs</li>
+</ul>
+
+<h4>4.4.2 Logging Standards</h4>
+<pre><code class="language-">Required fields:
+<ul>
+<li>Timestamp (UTC)</li>
+<li>User/Service identity</li>
+<li>Action performed</li>
+<li>Resource accessed</li>
+<li>Source IP/location</li>
+<li>Success/failure status</li>
+<li>Data classification level</li>
+</ul>
+</code></pre>
+
+<hr>
+
+<h2>5. Architecture Standards</h2>
+
+<h3>5.1 Reference Architecture</h3>
+
+<h4>5.1.1 Platform Components</h4>
+<pre><code class="language-">Data Sources → Ingestion Layer → Storage Layer → Processing Layer →
+Consumption Layer → Presentation Layer
+</code></pre>
+
+<strong>Ingestion Layer</strong>:
+<ul>
+<li>Batch ingestion: Apache Airflow, cloud-native tools</li>
+<li>Streaming ingestion: Kafka, Kinesis, or equivalent</li>
+<li>CDC tools for real-time data capture</li>
+<li>API gateways for external data</li>
+</ul>
+
+<strong>Storage Layer</strong>:
+<ul>
+<li>Data Lake: Cloud object storage (S3, ADLS, GCS)</li>
+<li>Data Warehouse: Snowflake, BigQuery, Redshift, or similar</li>
+<li>Operational databases: As per use case requirements</li>
+<li>Caching layer: Redis, Memcached for hot data</li>
+</ul>
+
+<strong>Processing Layer</strong>:
+<ul>
+<li>Batch processing: Spark, DBT for transformations</li>
+<li>Stream processing: Spark Streaming, Flink, or Kafka Streams</li>
+<li>Orchestration: Apache Airflow</li>
+<li>Compute: Managed services or containerized workloads</li>
+</ul>
+
+<strong>Consumption Layer</strong>:
+<ul>
+<li>SQL engines: Presto, Athena, or warehouse-native</li>
+<li>APIs: RESTful services for data access</li>
+<li>File exports: Parquet, CSV for external systems</li>
+<li>Real-time feeds: WebSockets, Server-Sent Events</li>
+</ul>
+
+<strong>Presentation Layer</strong>:
+<ul>
+<li>BI Tools: Tableau, Power BI, Looker, or similar</li>
+<li>Custom dashboards: React/Angular applications</li>
+<li>Reporting: Scheduled and ad-hoc reports</li>
+<li>Data science notebooks: Jupyter, Databricks</li>
+</ul>
+
+<h3>5.2 Technology Stack Standards</h3>
+
+<h4>5.2.1 Approved Technologies</h4>
+<ul>
+<li><strong>Orchestration</strong>: Apache Airflow (primary)</li>
+<li><strong>Transformation</strong>: DBT (SQL-based), Apache Spark (complex processing)</li>
+<li><strong>Data Warehouse</strong>: [Specify: Snowflake/BigQuery/Redshift]</li>
+<li><strong>Data Lake</strong>: [Specify: S3/ADLS/GCS]</li>
+<li><strong>Streaming</strong>: Apache Kafka or cloud-native equivalent</li>
+<li><strong>Visualization</strong>: [Specify approved BI tools]</li>
+<li><strong>Version Control</strong>: Git (GitHub/GitLab/Bitbucket)</li>
+<li><strong>CI/CD</strong>: [Specify: GitHub Actions/Jenkins/GitLab CI]</li>
+</ul>
+
+<h4>5.2.2 Technology Selection Criteria</h4>
+<ul>
+<li>Cloud-native and managed services preferred</li>
+<li>Open-source with strong community support</li>
+<li>Scalability and performance characteristics</li>
+<li>Security and compliance capabilities</li>
+<li>Total cost of ownership</li>
+<li>Skill availability and learning curve</li>
+<li>Vendor stability and roadmap</li>
+</ul>
+
+<h3>5.3 Data Formats and Storage</h3>
+
+<h4>5.3.1 File Formats</h4>
+<ul>
+<li><strong>Raw Zone</strong>: Original format preserved</li>
+<li><strong>Curated Zone</strong>: Parquet (columnar, compressed)</li>
+<li><strong>Analytics Zone</strong>: Parquet or ORC</li>
+<li><strong>Archive Zone</strong>: Compressed Parquet with partitioning</li>
+<li><strong>Exports</strong>: CSV, JSON, or Parquet based on consumer needs</li>
+</ul>
+
+<h4>5.3.2 Partitioning Strategy</h4>
+<pre><code class="language-">Standard partition patterns:
+<ul>
+<li>Time-based: year/month/day for daily data</li>
+<li>Entity-based: customer</em>region/country for dimensional data</li>
+<li>Hybrid: year/month/category for mixed patterns</li>
+</ul>
+
+<p>Example structure:
+/curated/sales/transactions/year=2026/month=04/day=08/
+</code></pre></p>
+
+<h4>5.3.3 Compression</h4>
+<ul>
+<li><strong>Snappy</strong>: Default for balanced performance</li>
+<li><strong>GZIP</strong>: Higher compression for cold data</li>
+<li><strong>LZO</strong>: Fast decompression for hot data</li>
+<li><strong>Zstandard</strong>: Modern alternative with good balance</li>
+</ul>
+
+<h3>5.4 API Standards</h3>
+
+<h4>5.4.1 API Design Principles</h4>
+<ul>
+<li>RESTful design for data access APIs</li>
+<li>GraphQL for flexible querying (where appropriate)</li>
+<li>Versioning: URL path versioning (v1, v2)</li>
+<li>Pagination: Cursor-based for large datasets</li>
+<li>Rate limiting: Protect platform resources</li>
+<li>Authentication: OAuth 2.0 or API keys</li>
+</ul>
+
+<h4>5.4.2 API Documentation</h4>
+<ul>
+<li>OpenAPI/Swagger specification required</li>
+<li>Interactive API documentation portal</li>
+<li>Code examples in multiple languages</li>
+<li>Changelog and deprecation notices</li>
+<li>SLA and rate limit documentation</li>
+</ul>
+
+<hr>
+
+<h2>6. Data Quality Standards</h2>
+
+<h3>6.1 Data Quality Dimensions</h3>
+
+<h4>6.1.1 Quality Metrics</h4>
+<ul>
+<li><strong>Completeness</strong>: Percentage of required fields populated</li>
+<li><strong>Accuracy</strong>: Conformance to true values</li>
+<li><strong>Consistency</strong>: Agreement across datasets</li>
+<li><strong>Timeliness</strong>: Data freshness and latency</li>
+<li><strong>Validity</strong>: Adherence to defined formats and rules</li>
+<li><strong>Uniqueness</strong>: Absence of duplicates</li>
+</ul>
+
+<h4>6.1.2 Quality Thresholds</h4>
+<pre><code class="language-">Critical data: 99.5% quality score minimum
+Important data: 95% quality score minimum
+General data: 90% quality score minimum
+</code></pre>
+
+<h3>6.2 Data Quality Rules</h3>
+
+<h4>6.2.1 Validation Types</h4>
+<ul>
+<li><strong>Schema validation</strong>: Data types, nullable constraints</li>
+<li><strong>Format validation</strong>: Dates, phone numbers, emails, etc.</li>
+<li><strong>Range validation</strong>: Numeric bounds, date ranges</li>
+<li><strong>Referential integrity</strong>: Foreign key relationships</li>
+<li><strong>Business rules</strong>: Domain-specific validations</li>
+<li><strong>Cross-field validation</strong>: Dependent field logic</li>
+</ul>
+
+<h4>6.2.2 Rule Implementation</h4>
+<pre><code class="language-sql">-- Example DBT validation
+version: 2
+models:
+<ul>
+<li>name: customers</li>
+</ul>
+    columns:
+<ul>
+<li>name: customer<em>id</li>
+</ul>
+        tests:
+<ul>
+<li>unique</li>
+<li>not</em>null</li>
+<li>name: email</li>
+</ul>
+        tests:
+<ul>
+<li>not<em>null</li>
+<li>email</em>format</li>
+<li>name: created<em>date</li>
+</ul>
+        tests:
+<ul>
+<li>not</em>null</li>
+<li>valid<em>date</em>range</li>
+</ul>
+</code></pre>
+
+<h3>6.3 Data Profiling</h3>
+
+<h4>6.3.1 Profiling Requirements</h4>
+<ul>
+<li>Profile all new datasets before production use</li>
+<li>Regular profiling of critical datasets (monthly)</li>
+<li>Automated profiling in data pipelines</li>
+<li>Profile statistics stored in data catalog</li>
+</ul>
+
+<h4>6.3.2 Profile Metrics</h4>
+<ul>
+<li>Record counts and growth trends</li>
+<li>Null/empty value percentages</li>
+<li>Distinct value counts and cardinality</li>
+<li>Value distributions and outliers</li>
+<li>Data type and format analysis</li>
+<li>Pattern detection (regex patterns)</li>
+</ul>
+
+<h3>6.4 Data Quality Monitoring</h3>
+
+<h4>6.4.1 Monitoring Strategy</h4>
+<ul>
+<li>Real-time monitoring for streaming data</li>
+<li>Post-load validation for batch data</li>
+<li>Automated quality score calculation</li>
+<li>Anomaly detection using statistical methods</li>
+<li>Alerting on quality threshold breaches</li>
+</ul>
+
+<h4>6.4.2 Quality Dashboards</h4>
+<ul>
+<li>Overall platform quality scorecard</li>
+<li>Dataset-level quality metrics</li>
+<li>Trend analysis and historical tracking</li>
+<li>Issue tracking and resolution status</li>
+<li>Data quality SLA compliance</li>
+</ul>
+
+<hr>
+
+<h2>7. Operational Standards</h2>
+
+<h3>7.1 Pipeline Development</h3>
+
+<h4>7.1.1 Development Workflow</h4>
+<pre><code class="language-">1. Requirements gathering and design
+2. Development in isolated environment
+3. Unit testing with sample data
+4. Code review and approval
+5. Integration testing in staging
+6. Performance and scale testing
+7. UAT with business stakeholders
+8. Production deployment with monitoring
+</code></pre>
+
+<h4>7.1.2 Coding Standards</h4>
+<ul>
+<li><strong>Python</strong>: PEP 8 style guide</li>
+<li><strong>SQL</strong>: Standard SQL formatting (SQL Fluff)</li>
+<li><strong>Spark</strong>: Scala style guide or PySpark best practices</li>
+<li><strong>DBT</strong>: DBT best practices and style guide</li>
+<li><strong>Documentation</strong>: Inline comments and README files</li>
+<li><strong>Version Control</strong>: Meaningful commit messages, feature branches</li>
+</ul>
+
+<h4>7.1.3 Code Review Requirements</h4>
+<ul>
+<li>Mandatory peer review for all changes</li>
+<li>Security review for sensitive data handling</li>
+<li>Architecture review for new patterns</li>
+<li>Performance review for large-scale pipelines</li>
+<li>Approval from data owner for new data access</li>
+</ul>
+
+<h3>7.2 Pipeline Orchestration</h3>
+
+<h4>7.2.1 Airflow Standards</h4>
+<pre><code class="language-python"># DAG naming convention
+dag<em>id = "{domain}</em>{pipeline<em>name}</em>{frequency}"
+<h1>Example: sales<em>order</em>processing<em>daily</h1>
+
+<h1>Default DAG arguments</h1>
+default</em>args = {
+    'owner': 'data<em>team',
+    'depends</em>on<em>past': False,
+    'email</em>on<em>failure': True,
+    'email</em>on<em>retry': False,
+    'retries': 3,
+    'retry</em>delay': timedelta(minutes=5),
+    'sla': timedelta(hours=2)
+}
+
+<h1>Tags for organization</h1>
+tags = ['domain:sales', 'priority:high', 'env:production']
+</code></pre>
+
+<h4>7.2.2 Dependency Management</h4>
+<ul>
+<li>Explicit task dependencies using >> operator</li>
+<li>Avoid complex branching where possible</li>
+<li>Use sensors for external dependencies</li>
+<li>Implement timeout for long-running tasks</li>
+<li>Handle failures gracefully with callbacks</li>
+</ul>
+
+<h4>7.2.3 Scheduling Standards</h4>
+<ul>
+<li>Use cron expressions for clarity</li>
+<li>Align with business SLAs</li>
+<li>Stagger pipeline execution to avoid resource contention</li>
+<li>Implement backfill capabilities</li>
+<li>Consider time zones for global operations</li>
+</ul>
+
+<h3>7.3 Testing Standards</h3>
+
+<h4>7.3.1 Test Coverage Requirements</h4>
+<ul>
+<li><strong>Unit Tests</strong>: 80% code coverage minimum</li>
+<li><strong>Integration Tests</strong>: Critical data flows</li>
+<li><strong>End-to-End Tests</strong>: Key business scenarios</li>
+<li><strong>Performance Tests</strong>: Large-scale data volumes</li>
+<li><strong>Data Quality Tests</strong>: All production datasets</li>
+</ul>
+
+<h4>7.3.2 Test Data Management</h4>
+<ul>
+<li>Synthetic test data for non-production</li>
+<li>Data masking for sensitive information</li>
+<li>Representative data samples</li>
+<li>Edge cases and boundary conditions</li>
+<li>Version-controlled test datasets</li>
+</ul>
+
+<h3>7.4 Deployment and Release</h3>
+
+<h4>7.4.1 CI/CD Pipeline</h4>
+<pre><code class="language-">Code Commit → Automated Tests → Build Artifact →
+Deploy to Dev → Integration Tests → Deploy to Staging →
+UAT → Deploy to Production → Monitoring
+</code></pre>
+
+<h4>7.4.2 Environment Strategy</h4>
+<ul>
+<li><strong>Development</strong>: Individual developer environments</li>
+<li><strong>Integration</strong>: Shared environment for integration testing</li>
+<li><strong>Staging</strong>: Production-like environment for UAT</li>
+<li><strong>Production</strong>: Live environment with strict controls</li>
+</ul>
+
+<h4>7.4.3 Release Management</h4>
+<ul>
+<li>Scheduled release windows (off-peak hours)</li>
+<li>Change approval process for production</li>
+<li>Rollback procedures and backout plans</li>
+<li>Post-deployment validation</li>
+<li>Release notes and documentation</li>
+</ul>
+
+<h3>7.5 Monitoring and Alerting</h3>
+
+<h4>7.5.1 Monitoring Layers</h4>
+<ul>
+<li><strong>Infrastructure</strong>: CPU, memory, disk, network</li>
+<li><strong>Platform</strong>: Cluster health, service availability</li>
+<li><strong>Pipeline</strong>: Execution status, duration, data volumes</li>
+<li><strong>Data Quality</strong>: Quality scores, validation failures</li>
+<li><strong>Business</strong>: KPIs, SLA compliance</li>
+</ul>
+
+<h4>7.5.2 Alerting Standards</h4>
+<pre><code class="language-">Alert severity levels:
+<ul>
+<li>Critical: Immediate action required (page on-call)</li>
+<li>High: Requires prompt attention (email + Slack)</li>
+<li>Medium: Review during business hours (email)</li>
+<li>Low: Informational (logging only)</li>
+</ul>
+
+<p>Alert format:
+[SEVERITY] [COMPONENT] [ISSUE] - [IMPACT]
+Example: [CRITICAL] [sales_pipeline] [Data quality failure] - [Orders not processed]
+</code></pre></p>
+
+<h4>7.5.3 On-Call and Incident Response</h4>
+<ul>
+<li>24/7 on-call rotation for critical systems</li>
+<li>Incident management process (ITIL-based)</li>
+<li>Runbooks for common issues</li>
+<li>Post-incident reviews and RCA</li>
+<li>Continuous improvement based on incidents</li>
+</ul>
+
+<h3>7.6 Performance Optimization</h3>
+
+<h4>7.6.1 Optimization Guidelines</h4>
+<ul>
+<li>Partition large datasets appropriately</li>
+<li>Use columnar formats (Parquet/ORC)</li>
+<li>Implement caching for frequently accessed data</li>
+<li>Optimize query patterns (avoid full scans)</li>
+<li>Right-size compute resources</li>
+<li>Use compression to reduce I/O</li>
+<li>Materialize intermediate results when beneficial</li>
+</ul>
+
+<h4>7.6.2 Performance Monitoring</h4>
+<ul>
+<li>Query execution time tracking</li>
+<li>Resource utilization metrics</li>
+<li>Cost per query/pipeline</li>
+<li>Data scan volume analysis</li>
+<li>Bottleneck identification and resolution</li>
+</ul>
+
+<hr>
+
+<h2>8. Roles and Responsibilities</h2>
+
+<h3>8.1 Organizational Roles</h3>
+
+<h4>8.1.1 Chief Data Officer (CDO)</h4>
+<ul>
+<li>Overall accountability for enterprise data strategy</li>
+<li>Governance framework ownership</li>
+<li>Budget and resource allocation</li>
+<li>Stakeholder management and communication</li>
+<li>Strategic partnerships and vendor relationships</li>
+</ul>
+
+<h4>8.1.2 Data Platform Manager</h4>
+<ul>
+<li>Platform operations and maintenance</li>
+<li>Capacity planning and scaling</li>
+<li>Technology evaluation and selection</li>
+<li>Vendor management</li>
+<li>Cost optimization</li>
+</ul>
+
+<h4>8.1.3 Data Architect</h4>
+<ul>
+<li>Platform architecture design</li>
+<li>Technology standards and patterns</li>
+<li>Integration architecture</li>
+<li>Performance and scalability design</li>
+<li>Solution reviews and approvals</li>
+</ul>
+
+<h4>8.1.4 Data Engineer</h4>
+<ul>
+<li>Pipeline development and maintenance</li>
+<li>Data integration and transformation</li>
+<li>Performance optimization</li>
+<li>Troubleshooting and support</li>
+<li>Automation and tooling</li>
+</ul>
+
+<h4>8.1.5 Data Analyst</h4>
+<ul>
+<li>Business requirements gathering</li>
+<li>Data analysis and insights</li>
+<li>Dashboard and report development</li>
+<li>Data quality analysis</li>
+<li>User training and support</li>
+</ul>
+
+<h4>8.1.6 Data Scientist</h4>
+<ul>
+<li>Machine learning model development</li>
+<li>Advanced analytics and predictions</li>
+<li>Feature engineering</li>
+<li>Model deployment and monitoring</li>
+<li>Research and innovation</li>
+</ul>
+
+<h4>8.1.7 Data Steward</h4>
+<ul>
+<li>Domain data ownership</li>
+<li>Business metadata management</li>
+<li>Data quality oversight</li>
+<li>Access request approvals</li>
+<li>Policy compliance</li>
+</ul>
+
+<h4>8.1.8 DataOps Engineer</h4>
+<ul>
+<li>CI/CD pipeline management</li>
+<li>Infrastructure as Code</li>
+<li>Monitoring and alerting</li>
+<li>Incident response</li>
+<li>Automation and optimization</li>
+</ul>
+
+<h3>8.2 RACI Matrix</h3>
+
+<p>| Activity | CDO | Platform Manager | Architect | Engineer | Analyst | Steward | DataOps |
+|----------|-----|------------------|-----------|----------|---------|---------|---------|
+| Governance Policy | A | R | C | I | I | C | I |
+| Architecture Design | C | C | A/R | C | I | I | C |
+| Pipeline Development | I | C | C | R/A | C | C | C |
+| Data Quality | C | I | C | R | C | A | C |
+| Access Management | I | C | I | I | C | A/R | C |
+| Incident Response | I | A | C | R | C | I | R |
+| Cost Optimization | A | R | C | C | I | I | C |</p>
+
+<em>A = Accountable, R = Responsible, C = Consulted, I = Informed</em>
+
+<hr>
+
+<h2>9. Monitoring and Reporting</h2>
+
+<h3>9.1 Key Performance Indicators (KPIs)</h3>
+
+<h4>9.1.1 Platform Health KPIs</h4>
+<ul>
+<li>Platform availability (target: 99.9%)</li>
+<li>Average pipeline success rate (target: 98%)</li>
+<li>Mean time to recovery (MTTR) (target: < 30 minutes)</li>
+<li>Incident count and trend</li>
+<li>Resource utilization efficiency</li>
+</ul>
+
+<h4>9.1.2 Data Quality KPIs</h4>
+<ul>
+<li>Overall data quality score (target: > 95%)</li>
+<li>Critical dataset quality score (target: > 99%)</li>
+<li>Data quality issue resolution time</li>
+<li>Data freshness SLA compliance</li>
+<li>Schema drift incidents</li>
+</ul>
+
+<h4>9.1.3 Operational KPIs</h4>
+<ul>
+<li>Pipeline execution duration trends</li>
+<li>Data processing volume (GB/day)</li>
+<li>Failed job percentage</li>
+<li>SLA compliance rate</li>
+<li>Cost per GB processed</li>
+</ul>
+
+<h4>9.1.4 Business KPIs</h4>
+<ul>
+<li>Number of active users</li>
+<li>Report and dashboard usage</li>
+<li>Time to insight (request to delivery)</li>
+<li>Self-service adoption rate</li>
+<li>Business value delivered (ROI)</li>
+</ul>
+
+<h3>9.2 Reporting Framework</h3>
+
+<h4>9.2.1 Daily Reports</h4>
+<ul>
+<li>Pipeline execution summary</li>
+<li>Critical failures and resolution status</li>
+<li>SLA breaches and impact</li>
+<li>Security incidents</li>
+</ul>
+
+<h4>9.2.2 Weekly Reports</h4>
+<ul>
+<li>Platform performance trends</li>
+<li>Data quality scorecard</li>
+<li>Resource utilization analysis</li>
+<li>Cost analysis</li>
+</ul>
+
+<h4>9.2.3 Monthly Reports</h4>
+<ul>
+<li>Executive dashboard</li>
+<li>Capacity planning metrics</li>
+<li>Compliance status</li>
+<li>Project delivery status</li>
+<li>User satisfaction metrics</li>
+</ul>
+
+<h4>9.2.4 Quarterly Reports</h4>
+<ul>
+<li>Strategic objectives progress</li>
+<li>ROI and business value</li>
+<li>Technology roadmap updates</li>
+<li>Governance maturity assessment</li>
+</ul>
+
+<h3>9.3 Dashboards</h3>
+
+<h4>9.3.1 Operations Dashboard</h4>
+<ul>
+<li>Real-time pipeline status</li>
+<li>Active alerts and incidents</li>
+<li>System health metrics</li>
+<li>Current resource utilization</li>
+</ul>
+
+<h4>9.3.2 Data Quality Dashboard</h4>
+<ul>
+<li>Quality scores by domain</li>
+<li>Top data quality issues</li>
+<li>Trend analysis</li>
+<li>SLA compliance</li>
+</ul>
+
+<h4>9.3.3 Executive Dashboard</h4>
+<ul>
+<li>Platform KPIs at a glance</li>
+<li>Cost trends and forecasts</li>
+<li>User adoption metrics</li>
+<li>Strategic initiative status</li>
+</ul>
+
+<hr>
+
+<h2>10. Appendices</h2>
+
+<h3>Appendix A: Glossary</h3>
+
+<strong>Big Data</strong>: Large volumes of structured and unstructured data that traditional processing methods cannot handle efficiently
+
+<strong>Data Lake</strong>: Centralized repository for storing raw data in its native format
+
+<strong>Data Warehouse</strong>: Structured repository optimized for analytical queries
+
+<strong>Data Lineage</strong>: Documentation of data's origin, movement, and transformation
+
+<strong>ETL/ELT</strong>: Extract, Transform, Load / Extract, Load, Transform processes
+
+<strong>Master Data</strong>: Core business entities that are shared across the organization
+
+<strong>Metadata</strong>: Data about data (technical, business, operational)
+
+<strong>Data Catalog</strong>: Searchable inventory of all data assets
+
+<strong>Data Quality</strong>: Measure of data fitness for its intended use
+
+<strong>Data Governance</strong>: Framework for managing data availability, usability, integrity, and security
+
+<h3>Appendix B: Acronyms</h3>
+<ul>
+<li><strong>API</strong>: Application Programming Interface</li>
+<li><strong>CDC</strong>: Change Data Capture</li>
+<li><strong>CDO</strong>: Chief Data Officer</li>
+<li><strong>CI/CD</strong>: Continuous Integration/Continuous Deployment</li>
+<li><strong>GDPR</strong>: General Data Protection Regulation</li>
+<li><strong>IAM</strong>: Identity and Access Management</li>
+<li><strong>KPI</strong>: Key Performance Indicator</li>
+<li><strong>MDM</strong>: Master Data Management</li>
+<li><strong>PII</strong>: Personally Identifiable Information</li>
+<li><strong>RBAC</strong>: Role-Based Access Control</li>
+<li><strong>SLA</strong>: Service Level Agreement</li>
+<li><strong>SOX</strong>: Sarbanes-Oxley Act</li>
+<li><strong>VPC</strong>: Virtual Private Cloud</li>
+</ul>
+
+<h3>Appendix C: Reference Documents</h3>
+
+<p>1. Data Classification Policy
+2. Data Retention Schedule
+3. Security Standards and Controls
+4. API Development Guidelines
+5. DBT Style Guide
+6. Airflow Best Practices
+7. SQL Coding Standards
+8. Incident Response Procedures
+9. Change Management Process
+10. Disaster Recovery Plan</p>
+
+<h3>Appendix D: Templates and Tools</h3>
+
+<h4>D.1 Data Request Template</h4>
+<pre><code class="language-">Requestor Information:
+<ul>
+<li>Name:</li>
+<li>Department:</li>
+<li>Business justification:</li>
+</ul>
+
+<p>Data Requirements:
+<ul>
+<li>Dataset(s) needed:</li>
+<li>Data classification:</li>
+<li>Access level required:</li>
+<li>Duration of access:</li>
+<li>Intended use:</li>
+</ul></p>
+
+<p>Approvals:
+<ul>
+<li>Manager approval:</li>
+<li>Data steward approval:</li>
+<li>Security review (if required):</li>
+</ul>
+</code></pre></p>
+
+<h4>D.2 Pipeline Design Template</h4>
+<pre><code class="language-">Pipeline Name:
+Business Purpose:
+Source Systems:
+Target System:
+Frequency:
+SLA:
+Data Volume:
+Dependencies:
+Data Quality Rules:
+Error Handling:
+Monitoring Requirements:
+</code></pre>
+
+<h4>D.3 Data Quality Assessment Template</h4>
+<pre><code class="language-">Dataset:
+Assessment Date:
+Completeness Score:
+Accuracy Score:
+Consistency Score:
+Timeliness Score:
+Overall Quality Score:
+Critical Issues:
+Remediation Plan:
+</code></pre>
+
+<h3>Appendix E: Compliance Checklist</h3>
+
+<h4>GDPR Compliance</h4>
+<ul>
+<li>[ ] Data inventory maintained</li>
+<li>[ ] Privacy notices updated</li>
+<li>[ ] Consent management implemented</li>
+<li>[ ] Data subject rights procedures established</li>
+<li>[ ] Data protection impact assessments completed</li>
+<li>[ ] Breach notification procedures in place</li>
+<li>[ ] Data processing agreements with vendors</li>
+<li>[ ] Regular compliance audits conducted</li>
+</ul>
+
+<h4>SOX Compliance</h4>
+<ul>
+<li>[ ] Access controls documented and enforced</li>
+<li>[ ] Change management process implemented</li>
+<li>[ ] Audit trails enabled and retained</li>
+<li>[ ] Separation of duties enforced</li>
+<li>[ ] IT general controls documented</li>
+<li>[ ] Financial reporting controls validated</li>
+<li>[ ] Regular compliance testing performed</li>
+</ul>
+
+<h3>Appendix F: Contact Information</h3>
+
+<strong>Data Governance Office</strong>
+<ul>
+<li>Email: data.governance@company.com</li>
+<li>Slack: #data-governance</li>
+</ul>
+
+<strong>Platform Support</strong>
+<ul>
+<li>Email: data.platform.support@company.com</li>
+<li>Slack: #data-platform-support</li>
+<li>On-call: [PagerDuty/phone number]</li>
+</ul>
+
+<strong>Security Team</strong>
+<ul>
+<li>Email: security@company.com</li>
+<li>Slack: #security</li>
+<li>Security incidents: security.incidents@company.com</li>
+</ul>
+
+<hr>
+
+<h2>Document Control</h2>
+
+<h3>Version History</h3>
+
+<p>| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | April 2026 | Enterprise Data Office | Initial release |</p>
+
+<h3>Review and Approval</h3>
+
+<p>| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| Chief Data Officer | | | |
+| Chief Information Officer | | | |
+| Chief Security Officer | | | |
+| Compliance Officer | | | |</p>
+
+<h3>Document Review Schedule</h3>
+
+<p>This document will be reviewed and updated:
+<ul>
+<li>Annually for regular updates</li>
+<li>As needed for significant platform changes</li>
+<li>Following regulatory changes</li>
+<li>After major incidents or audit findings</li>
+</ul></p>
+
+<hr>
+
+<strong>End of Document</strong>
+    </div>
+</body>
+</html>
